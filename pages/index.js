@@ -18,7 +18,6 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      {/* Keep the existing code here */}
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -32,10 +31,9 @@ export default function Home({ allPostsData }) {
         </div>
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2">
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
+              <Card content={{image:"/images/code-documentation.png",title:"Code Documentation Tool", link:"https://github.com/seanyang0813/code-documentation", width: 800, height: 400}}>A tool to create sql templates with documentations. It has a built in editor and allows code insertion into the editor directly. It aims to lower the barrier to use code for non technical people</Card>
+              <Card content={{image:"/images/back-of-zoom.png", title:"Back of Zoom", link:"https://github.com/seanyang0813/backofzoom", width: 400, height: 400}}>A real time chat app that lets student enter the zoom url they are in to chat with others in the meeting without distracting other in the actual zoom chat</Card>
+              <Card content={{image:"/images/page-flip.png",title:"Flip Pages with Facial Expression", link:"https://github.com/seanyang0813/facial-expression-keyboard-action-simulator", width: 600, height: 400}}>A desktop app that simulates keyboard actions based on facial expression to flip pages on e-books</Card>
             </div>
         </div>
         

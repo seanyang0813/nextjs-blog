@@ -1,11 +1,19 @@
-export default function Card({ content }) {
-  return (<div class="inline-block mx-5 max-w-xs rounded overflow-hidden shadow-lg my-2">
-    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"></img>
-    <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-        <p class="text-grey-darker text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+import Image from 'next/image'
+
+export default function Card({ content, children }) {
+  return (
+  <a href={content.link} target="_blank" className="text-black">
+    <div className="inline-block mx-5 max-w-xs rounded overflow-hidden shadow-lg my-2">
+    <div>
+      <Image width={content.width} height={content.height} src={content.image} alt="code documentation"></Image>
+    </div>
+      
+    <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{content.title}</div>
+        <p className="text-grey-darker text-base">
+          {children}
         </p>
     </div>
-    </div>)
+    </div>
+  </a>)
 }
