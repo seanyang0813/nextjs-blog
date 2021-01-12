@@ -3,7 +3,8 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
+import Date from '../components/date.js'
+import Card from '../components/card.js'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -25,22 +26,19 @@ export default function Home({ allPostsData }) {
         <p>Hi, I am <strong>Sean Yang</strong> 杨天啸. I am a Computer Science major at the University of Maryland, College Park.</p>
         <p>I am mostly interested in web development. Check out my github at <a href="https://github.com/seanyang0813" target="_blank">seanyang0813</a></p>
       </section>
-      {/* Add this <section> tag below the existing <section> tag */}
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </small>
-          </li>
-          ))}
-        </ul>
+      <section className={utilStyles.headingMd}>
+        <div className="text-center">
+          <h2 className={utilStyles.headingXl}>Projects</h2>
+        </div>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
+            </div>
+        </div>
+        
       </section>
     </Layout>
   )
