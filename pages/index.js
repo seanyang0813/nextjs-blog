@@ -23,7 +23,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hi, I am <strong>Sean Yang</strong> 杨天啸. I am a Computer Science major at the University of Maryland, College Park.</p>
-        <p>I am interested in front-end development and loves to learn by building. Check out my github at <a href="https://github.com/seanyang0813" target="_blank">seanyang0813</a></p>
+        <p>I am interested in front-end development and love to learn by building. Check out my github at <a href="https://github.com/seanyang0813" target="_blank">seanyang0813</a></p>
       </section>
       <section className={utilStyles.headingMd}>
         <div className="text-center">
